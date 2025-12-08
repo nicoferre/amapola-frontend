@@ -1,0 +1,53 @@
+<svg
+  width="64"
+  height="64"
+  viewBox="0 0 120 120"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <mask id="pomegranate-mask-favicon">
+      <rect width="120" height="120" fill="white" />
+      <path
+        d="M 75 45 Q 90 60 75 75"
+        stroke="black"
+        stroke-width="10"
+        stroke-linecap="round"
+        fill="none"
+      />
+    </mask>
+  </defs>
+  
+  <!-- Fondo teal sólido -->
+  <rect width="120" height="120" fill="#20b2aa" rx="16"/>
+  
+  <!-- Cuerpo circular de la granada centrado -->
+  <circle
+    cx="60"
+    cy="65"
+    r="42"
+    fill="white"
+    mask="url(#pomegranate-mask-favicon)"
+  />
+  
+  <!-- Corona superior pequeña tipo corona -->
+  <path
+    d="M 45 50 
+       L 48 30
+       L 52 27
+       L 60 25
+       L 68 27
+       L 72 30
+       L 75 50"
+    stroke="white"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+  
+  <!-- Pequeños puntos decorativos en la corona -->
+  <circle cx="50" cy="32" r="2" fill="white" />
+  <circle cx="60" cy="28" r="2" fill="white" />
+  <circle cx="70" cy="32" r="2" fill="white" />
+</svg>
