@@ -11,9 +11,13 @@ export async function apiRequest(endpoint, options = {}) {
   const token = localStorage.getItem('token');
   
   const headers = {
-    'Content-Type': 'application/json',
     ...options.headers
   };
+  
+  // No establecer Content-Type para FormData, el navegador lo hará automáticamente
+  if (!(options.body instanceof FormData) && !options.isFormData) {
+    headers['Content-Type'] = 'application/json';
+  }
   
   if (token) {
     headers.Authorization = `Bearer ${token}`;
@@ -60,10 +64,12 @@ export async function apiGet(endpoint) {
 /**
  * Realiza un POST request
  */
-export async function apiPost(endpoint, data) {
+export async function apiPost(endpoint, data, options = {}) {
+  const body = data instanceof FormData ? data : JSON.stringify(data);
   return apiRequest(endpoint, {
     method: 'POST',
-    body: JSON.stringify(data)
+    body,
+    ...options
   });
 }
 

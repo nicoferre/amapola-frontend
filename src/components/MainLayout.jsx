@@ -1,14 +1,21 @@
 import { useState } from 'react'
 import Sidebar from './Sidebar'
+import Products from '../pages/Products'
 import './MainLayout.css'
 
 function MainLayout({ user, onLogout, children }) {
   const [currentPath, setCurrentPath] = useState('/dashboard')
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
+  const [currentPage, setCurrentPage] = useState(null)
 
   const handleNavigate = (path) => {
     setCurrentPath(path)
-    // Aquí puedes implementar navegación con react-router si lo deseas
+    // Mapear rutas a componentes
+    if (path === '/productos') {
+      setCurrentPage('products')
+    } else {
+      setCurrentPage(null)
+    }
     console.log('Navegando a:', path)
   }
 
@@ -37,7 +44,9 @@ function MainLayout({ user, onLogout, children }) {
           </div>
         </header>
         <div className="content-area">
-          {children || (
+          {currentPage === 'products' ? (
+            <Products />
+          ) : children || (
             <div className="welcome-message">
               <h1>Bienvenido a Amapola</h1>
               <p>Selecciona una opción del menú para comenzar</p>

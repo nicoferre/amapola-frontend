@@ -1,0 +1,15 @@
+.add-product {
+  width: 100%;
+}
+
+.add-product-success {
+  text-align: center;
+  padding: 3rem;
+}
+
+.add-product-success p {
+  font-size: 1.2rem;
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+}
+

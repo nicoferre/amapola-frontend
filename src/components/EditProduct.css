@@ -1,0 +1,28 @@
+.edit-product {
+  width: 100%;
+}
+
+.edit-product-loading,
+.edit-product-error,
+.edit-product-empty {
+  text-align: center;
+  padding: 3rem;
+}
+
+.edit-product-loading p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.edit-product-empty p {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.edit-product-empty .hint {
+  color: #999;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
